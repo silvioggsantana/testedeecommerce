@@ -8,41 +8,41 @@ export declare class OrdersController {
     }): Promise<any>;
     webhook(body: any, headers: any, res: Response): Promise<Response<any, Record<string, any>>>;
     getOrders(): Promise<({
+        payment: {
+            id: string;
+            createdAt: Date;
+            updatedAt: Date;
+            status: string;
+            amount: import("@prisma/client/runtime/library").Decimal;
+            provider: string;
+            transactionId: string | null;
+            orderId: string;
+        } | null;
         items: ({
             product: {
                 id: string;
-                status: string;
+                name: string;
                 createdAt: Date;
                 updatedAt: Date;
-                price: number;
-                name: string;
                 description: string;
+                price: import("@prisma/client/runtime/library").Decimal;
                 image: string | null;
+                status: string;
             };
         } & {
             id: string;
-            quantity: number;
-            price: number;
+            price: import("@prisma/client/runtime/library").Decimal;
             size: string;
             productId: string;
+            quantity: number;
             orderId: string;
         })[];
-        payment: {
-            id: string;
-            status: string;
-            createdAt: Date;
-            updatedAt: Date;
-            orderId: string;
-            amount: number;
-            provider: string;
-            transactionId: string | null;
-        } | null;
     } & {
         id: string;
-        total: number;
-        status: string;
-        paymentProviderId: string | null;
         createdAt: Date;
         updatedAt: Date;
+        status: string;
+        total: import("@prisma/client/runtime/library").Decimal;
+        paymentProviderId: string | null;
     })[]>;
 }

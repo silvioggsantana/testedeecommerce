@@ -1,8 +1,17 @@
 import { Injectable, OnModuleInit, OnModuleDestroy } from '@nestjs/common';
-import { prisma } from './prisma.config';  // Ajuste path
+import { PrismaClient } from '@prisma/client';
 
 @Injectable()
-export class PrismaService extends prisma.$extends({}) implements OnModuleInit, OnModuleDestroy {  // Extensível para custom queries
+export class PrismaService extends PrismaClient implements OnModuleInit, OnModuleDestroy {
+  constructor() {
+    super({
+      // Logging condicional: útil em dev, mínimo em produção
+      log: process.env.NODE_ENV === 'development'
+        ? ['query', 'info', 'warn', 'error']
+        : ['error'],
+    });
+  }
+
   async onModuleInit() {
     await this.$connect();
   }

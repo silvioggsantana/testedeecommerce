@@ -17,7 +17,7 @@ export declare class ProductsService {
         createdAt: Date;
         updatedAt: Date;
         description: string;
-        price: number;
+        price: import("@prisma/client/runtime/library").Decimal;
         image: string | null;
         status: string;
     })[]>;
@@ -36,7 +36,7 @@ export declare class ProductsService {
         createdAt: Date;
         updatedAt: Date;
         description: string;
-        price: number;
+        price: import("@prisma/client/runtime/library").Decimal;
         image: string | null;
         status: string;
     }>;
@@ -55,7 +55,7 @@ export declare class ProductsService {
         createdAt: Date;
         updatedAt: Date;
         description: string;
-        price: number;
+        price: import("@prisma/client/runtime/library").Decimal;
         image: string | null;
         status: string;
     }>;
@@ -74,7 +74,7 @@ export declare class ProductsService {
         createdAt: Date;
         updatedAt: Date;
         description: string;
-        price: number;
+        price: import("@prisma/client/runtime/library").Decimal;
         image: string | null;
         status: string;
     }>;
@@ -84,7 +84,7 @@ export declare class ProductsService {
         createdAt: Date;
         updatedAt: Date;
         description: string;
-        price: number;
+        price: import("@prisma/client/runtime/library").Decimal;
         image: string | null;
         status: string;
     }>;

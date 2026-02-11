@@ -18,7 +18,7 @@ export declare class ProductsController {
         createdAt: Date;
         updatedAt: Date;
         description: string;
-        price: number;
+        price: import("@prisma/client/runtime/library").Decimal;
         image: string | null;
         status: string;
     })[]>;
@@ -37,7 +37,7 @@ export declare class ProductsController {
         createdAt: Date;
         updatedAt: Date;
         description: string;
-        price: number;
+        price: import("@prisma/client/runtime/library").Decimal;
         image: string | null;
         status: string;
     }>;
@@ -60,7 +60,7 @@ export declare class AdminProductsController {
         createdAt: Date;
         updatedAt: Date;
         description: string;
-        price: number;
+        price: import("@prisma/client/runtime/library").Decimal;
         image: string | null;
         status: string;
     }>;
@@ -79,7 +79,7 @@ export declare class AdminProductsController {
         createdAt: Date;
         updatedAt: Date;
         description: string;
-        price: number;
+        price: import("@prisma/client/runtime/library").Decimal;
         image: string | null;
         status: string;
     }>;
@@ -89,7 +89,7 @@ export declare class AdminProductsController {
         createdAt: Date;
         updatedAt: Date;
         description: string;
-        price: number;
+        price: import("@prisma/client/runtime/library").Decimal;
         image: string | null;
         status: string;
     }>;

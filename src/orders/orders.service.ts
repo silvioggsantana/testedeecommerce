@@ -32,11 +32,11 @@ export class OrdersService {
         throw new BadRequestException(`Estoque insuficiente para ${product.name} (${item.size}).`);
       }
 
-      total += product.price * item.quantity;
+      total += Number(product.price) * item.quantity;
       orderItems.push({
         productId: product.id,
         quantity: item.quantity,
-        price: product.price,
+        price: Number(product.price),
         size: item.size,
       });
     }
