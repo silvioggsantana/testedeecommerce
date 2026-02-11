@@ -3,8 +3,8 @@ generator client {
 }
 
 datasource db {
-  provider = "sqlite"
-  url      = "file:./dev.db"
+  provider = "postgresql"  // Mude de "sqlite" se ainda estiver
+  url      = env("DATABASE_URL")
 }
 
 model User {
@@ -21,7 +21,7 @@ model Product {
   id          String           @id @default(uuid())
   name        String
   description String
-  price       Float
+  price       Decimal          @db.Decimal(10, 2)
   image       String?
   status      String           @default("ACTIVE")
   variants    ProductVariant[]
@@ -44,7 +44,7 @@ model ProductVariant {
 
 model Order {
   id                String      @id @default(uuid())
-  total             Float
+  total             Decimal     @db.Decimal(10, 2)
   status            String      @default("PENDING")
   items             OrderItem[]
   payment           Payment?
